@@ -10,6 +10,7 @@
           <tr v-for="(item, index) in tasks" :key="index">
             <td>{{ item.title }}</td>
             <td>{{ item.content }}</td>
+            <button @click="removeTask(index)">🗑</button>
           </tr>
         </tbody>
       </table>
@@ -34,7 +35,16 @@ import Vue from "vue";
 import { Task } from "@/interfaces/Task";
 
 export default class TaskManagement extends Vue {
-  tasks: Task[] = [];
+  tasks: Task[] = [
+    {
+      title: "Clean the car",
+      content: "Use water",
+    },
+    {
+      title: "Clean the room",
+      content: "Use the vacuum cleaner",
+    },
+  ];
 
   titleInput = "";
   contentInput = "";
@@ -52,6 +62,11 @@ export default class TaskManagement extends Vue {
     this.titleInput = "";
     this.contentInput = "";
   }
+
+  removeTask(index: number) {
+    this.tasks.splice(index, 1);
+    console.log(this.tasks);
+  }
 }
 </script>
 
@@ -61,6 +76,7 @@ export default class TaskManagement extends Vue {
   display: 50%;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .add-btn {
