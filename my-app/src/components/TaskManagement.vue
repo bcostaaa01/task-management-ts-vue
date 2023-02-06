@@ -29,6 +29,9 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Task from "@/interfaces/Task";
 
-export default class TaskManagement extends Vue {}
+export default class TaskManagement extends Vue {
+    tasks: Task[] = [];
+}
 </script>
