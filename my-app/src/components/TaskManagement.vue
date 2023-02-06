@@ -23,7 +23,7 @@
       <br />
       <textarea type="text" v-model="contentInput"></textarea>
     </div>
-    <button @click="addTask()">Add task</button>
+    <button class="add-btn" @click="addTask()">Add task</button>
   </div>
 </template>
 
@@ -48,3 +48,18 @@ export default class TaskManagement extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.task-table {
+  background-color: aliceblue;
+  display: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-btn {
+  margin-top: 20px;
+  padding: 20px;
+  color: #42b983;
+}
+</style>
