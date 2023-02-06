@@ -35,16 +35,7 @@ import Vue from "vue";
 import { Task } from "@/interfaces/Task";
 
 export default class TaskManagement extends Vue {
-  tasks: Task[] = [
-    {
-      title: "Clean the car",
-      content: "Use water",
-    },
-    {
-      title: "Clean the room",
-      content: "Use the vacuum cleaner",
-    },
-  ];
+  tasks: Task[] = [];
 
   titleInput = "";
   contentInput = "";
