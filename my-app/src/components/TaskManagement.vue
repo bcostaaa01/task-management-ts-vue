@@ -7,9 +7,9 @@
           <th>Content</th>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
+          <tr v-for="(item, index) in tasks" :key="index">
+            <td>{{ item.title }}</td>
+            <td>{{ item.content }}</td>
           </tr>
         </tbody>
       </table>
@@ -17,21 +17,34 @@
     <div class="task-form">
       <label>Title</label>
       <br />
-      <input type="text" />
+      <input type="text" v-model="titleInput" />
       <br />
       <label>Content</label>
       <br />
-      <input type="text" />
+      <textarea type="text" v-model="contentInput"></textarea>
     </div>
-    <button>Add task</button>
+    <button @click="addTask()">Add task</button>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import Task from "@/interfaces/Task";
+import { Task } from "@/interfaces/Task";
 
 export default class TaskManagement extends Vue {
-    tasks: Task[] = [];
+  tasks: Task[] = [];
+
+  titleInput = "";
+  contentInput = "";
+
+  addTask() {
+    this.tasks.push({
+      title: this.titleInput,
+      content: this.contentInput,
+    });
+    console.log(this.tasks);
+    this.titleInput = "";
+    this.contentInput = "";
+  }
 }
 </script>
