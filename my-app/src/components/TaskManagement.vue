@@ -23,7 +23,9 @@
       <br />
       <textarea type="text" v-model="contentInput"></textarea>
     </div>
-    <button class="add-btn" @click="addTask()">Add task</button>
+    <button class="add-btn" @click="addTask()" :disabled="!hasValidInput">
+      Add task
+    </button>
   </div>
 </template>
 
@@ -36,6 +38,10 @@ export default class TaskManagement extends Vue {
 
   titleInput = "";
   contentInput = "";
+
+  get hasValidInput() {
+    return this.titleInput && this.contentInput;
+  }
 
   addTask() {
     this.tasks.push({
