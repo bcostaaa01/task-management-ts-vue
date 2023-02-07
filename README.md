@@ -13,7 +13,7 @@ $ git clone https://github.com/bcostaaa01/task-management-ts-vue.git
 Then navigate to the project directory and install the dependencies.
 
 ```shell
-$ cd task-management-app
+$ cd task-management-ts-vue
 $ npm install
 ```
 
