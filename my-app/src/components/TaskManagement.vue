@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { Vue } from "vue-property-decorator";
 import { Task } from "@/interfaces/Task";
 
 export default class TaskManagement extends Vue {
